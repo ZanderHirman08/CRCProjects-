@@ -6,62 +6,81 @@
  */
 
 window.SITE = {
-  // Shown in the header and browser tab
+  // Header brand + browser tab title
   title: "CRC Projects",
   owner: "Zander Hirman",
 
-  // One or two sentences shown at the top of the home page
-  intro:
-    "A collection of the projects I've built and contributed to at CRC — " +
-    "what each one is, what I did, and what I learned.",
+  // Small line above the big heading
+  eyebrow: "GIS · Coastal Regional Commission",
 
-  // Link back to your main portfolio (shown in the header + footer)
+  // Big heading on the home page
+  heading: "Coastal Regional Commission Projects",
+
+  // Intro paragraph under the heading
+  intro:
+    "GIS and mapping work from my time with the Coastal Regional Commission (CRC). " +
+    "Each project covers what the problem was, what I built, and how it was used.",
+
+  // "About" section. Each string is a paragraph. Delete the lines to hide the section.
+  about: [
+    "Describe your role at the CRC here: your title, the dates, and which team or department you worked with.",
+    "Then a sentence or two on the kind of work you did there and the tools you used most."
+  ],
+
+  // Link back to your main portfolio
   portfolioUrl: "https://zanderhirman08.github.io/",
 
-  // Optional extra links in the footer. Delete any you don't want.
+  // Contact links at the bottom of the page
   links: [
-    { label: "GitHub", url: "https://github.com/zanderhirman08" }
-    // { label: "LinkedIn", url: "https://www.linkedin.com/in/your-handle" },
-    // { label: "Email", url: "mailto:you@example.com" }
-  ]
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/zander-hirman-918364390/" },
+    { label: "GitHub", url: "https://github.com/ZanderHirman08" }
+  ],
+
+  // Starting view of the map at the top of the home page.
+  // Projects with a `location` show up as points on it.
+  map: { center: [31.6, -81.4], zoom: 8 }
 };
 
 /*
- * Each project is one object in this list. Copy the example below,
- * paste it as a new entry, and fill it in.
+ * Each project is one object in this list. They appear on the site in
+ * the same order as here. Copy the example below and fill it in.
  *
- *   id          short unique name used in the URL (lowercase, dashes, no spaces)
- *   title       project name
- *   date        "YYYY-MM" — projects are sorted newest first
- *   summary     one or two sentences shown on the card
- *   role        what you did (optional)
- *   tags        list of skills/tools — these become the filter buttons
- *   image       path to an image in assets/images/projects/ (optional)
- *   links       buttons on the project page, e.g. code, demo, slides (optional)
- *   details     longer write-up shown on the project page. Each string is a
- *               paragraph. Lines starting with "- " become a bullet list. (optional)
- *   featured    true to pin the project to the top (optional)
+ *   id        short unique name used in the URL (lowercase, dashes, no spaces)
+ *   title     project name
+ *   date      shown as written, e.g. "Summer 2026"
+ *   badge     small label above the title, e.g. "Case Study" (optional)
+ *   role      what you did (optional)
+ *   tags      tools/skills — these also become the filter buttons
+ *   summary   2–3 sentences shown on the card
+ *   image     thumbnail, e.g. "assets/images/projects/my-map.png" (optional)
+ *   location  { name, lat, lng } puts a point on the map (optional)
+ *   links     buttons, e.g. live map, StoryMap, write-up PDF (optional)
+ *   figures   [{ src, caption }] images shown in a strip on the project page (optional)
+ *   details   longer write-up on the project page. Each string is a paragraph;
+ *             lines starting with "- " become a bullet list. (optional)
  */
 
 window.PROJECTS = [
   {
     id: "example-project",
     title: "Example Project (replace me)",
-    date: "2026-09",
+    date: "Fall 2026",
+    badge: "Example",
+    role: "GIS Intern",
+    tags: ["ArcGIS Pro", "Example"],
     summary:
       "This is a placeholder showing how a project entry looks. Edit or delete it in data/projects.js.",
-    role: "Lead developer",
-    tags: ["Example", "Template"],
     image: "",
+    location: { name: "Brunswick, GA", lat: 31.15, lng: -81.49 },
     links: [
-      { label: "Source code", url: "https://github.com/zanderhirman08/CRCProjects-" }
+      { label: "Source", url: "https://github.com/ZanderHirman08/CRCProjects-" }
     ],
+    figures: [],
     details: [
-      "Use this section to describe the problem the project solved and why it mattered.",
+      "Use this section to describe the problem the project solved and who it was for.",
       "What I did:",
-      "- Built the first thing\n- Designed the second thing\n- Tested and shipped it",
-      "Close with the outcome — results, numbers, or what you'd do differently next time."
-    ],
-    featured: true
+      "- Collected or compiled the data\n- Built the analysis or map\n- Delivered it to staff, partners, or the public",
+      "Close with the outcome: how it was used, results, or what you'd do differently."
+    ]
   }
 ];
