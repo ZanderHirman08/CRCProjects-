@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CRC Projects | Zander Hirman</title>
+<meta name="description" content="GIS and mapping projects from Zander Hirman's work with the Coastal Regional Commission." />
+<meta name="theme-color" content="#eef1ef" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=PT+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./" data-site="title">CRC Projects</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <nav id="siteNav">
+      <a href="#about" id="navAbout"><span class="nav-num">01</span>About</a>
+      <a href="#projects"><span class="nav-num">02</span>Projects</a>
+      <a href="#contact"><span class="nav-num">03</span>Contact</a>
+      <a data-site="portfolio" href="#">&larr; Portfolio</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow" data-site="eyebrow"></div>
+    <h1 data-site="heading"></h1>
+    <p class="subtitle" data-site="intro"></p>
+    <div class="hero-actions">
+      <a class="btn" href="#projects">View Projects</a>
+      <a class="btn btn-outline" data-site="portfolio" href="#">Back to Portfolio</a>
+    </div>
+    <div id="hero-map" aria-label="Map of project locations" hidden></div>
+  </div>
+</section>
+
+<section class="section" id="about" hidden>
+  <div class="wrap">
+    <h2><span class="section-num">01</span>About</h2>
+    <div class="about-body" id="aboutBody"></div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <h2><span class="section-num">02</span>Projects</h2>
+    <p class="section-lead">Field data, analysis, and web mapping for coastal communities.</p>
+    <div class="filters" id="filters"></div>
+    <div class="project-grid" id="projectGrid"></div>
+    <p class="empty" id="empty" hidden>No projects match that filter.</p>
+  </div>
+</section>
+
+<section class="section alt" id="contact">
+  <div class="wrap">
+    <h2><span class="section-num">03</span>Contact</h2>
+    <p class="section-lead">More of my work, education, and r&eacute;sum&eacute; are on my main portfolio.</p>
+    <div class="contact-list" id="contactList"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/projects.js"></script>
+<script src="assets/js/main.js"></script>
+<script>renderHome();</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project | CRC Projects</title>
+<meta name="theme-color" content="#eef1ef" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=PT+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./" data-site="title">CRC Projects</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <nav id="siteNav">
+      <a href="./#projects">All Projects</a>
+      <a data-site="portfolio" href="#">&larr; Portfolio</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap narrow project-page">
+  <a class="back" href="./#projects">&larr; All projects</a>
+  <article id="project"></article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/projects.js"></script>
+<script src="assets/js/main.js"></script>
+<script>renderProject();</script>
+</body>
+</html>
