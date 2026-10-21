@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRC Projects</title>
+  <meta name="description" content="Projects built at CRC.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" data-site="title">CRC Projects</a>
+      <a class="btn btn-ghost" data-site="portfolio" href="#">← Back to portfolio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow" data-site="owner"></p>
+      <h1 data-site="title">CRC Projects</h1>
+      <p class="lead" data-site="intro"></p>
+    </section>
+
+    <section aria-label="Filter projects">
+      <div class="filters" id="filters"></div>
+    </section>
+
+    <section aria-label="Projects">
+      <div class="grid" id="project-grid"></div>
+      <p class="empty" id="empty" hidden>No projects match that filter.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner" id="footer"></div>
+  </footer>
+
+  <script src="data/projects.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>renderHome();</script>
+</body>
+</html>
