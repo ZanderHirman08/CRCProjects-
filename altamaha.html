@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Little Amazon | Altamaha River Delta</title>
+<meta name="description" content="The Altamaha River delta in near-infrared satellite imagery and lidar terrain. A GIS Day map by Zander Hirman." />
+<meta name="theme-color" content="#0e1512" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=PT+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/css/altamaha.css" />
+</head>
+<body>
+
+<div id="map" aria-label="Map of the Altamaha River delta"></div>
+
+<div class="swipe" id="swipe" aria-hidden="true">
+  <div class="swipe-line"></div>
+  <button class="swipe-handle" id="swipeHandle" type="button" aria-label="Drag to compare infrared and true color" title="Drag to compare">&#x2194;</button>
+  <span class="swipe-tag swipe-tag-left">Near-infrared</span>
+  <span class="swipe-tag swipe-tag-right">True color</span>
+</div>
+
+<aside class="panel" id="panel">
+  <button class="panel-toggle" id="panelToggle" type="button" aria-expanded="true" aria-controls="panelBody">
+    <span class="panel-eyebrow">GIS Day 2026 &middot; Coastal Georgia</span>
+    <span class="panel-chevron" aria-hidden="true">&#9662;</span>
+  </button>
+  <h1>The Little Amazon</h1>
+  <p class="panel-sub">The Altamaha River delta in near-infrared</p>
+
+  <div class="panel-body" id="panelBody">
+    <p>
+      The Altamaha drains about a quarter of Georgia and is never dammed along its main stem.
+      Before it reaches the sea at Altamaha Sound it spreads into a maze of cypress&ndash;tupelo swamp,
+      tidal freshwater forest and salt marsh. It is one of the largest undeveloped river deltas on the
+      Atlantic coast.
+    </p>
+    <p>
+      In this <strong>false-color</strong> view the satellite's near-infrared band is drawn as red.
+      Healthy leaves reflect near-infrared strongly, so the more alive the land is, the redder it glows.
+      Drag the handle to see the same place in ordinary true color.
+    </p>
+
+    <div class="legend">
+      <div><span class="sw sw-red"></span>Dense, healthy forest and swamp</div>
+      <div><span class="sw sw-pink"></span>Marsh grass and young growth</div>
+      <div><span class="sw sw-cyan"></span>Bare soil, sand, roads and towns</div>
+      <div><span class="sw sw-dark"></span>Open water</div>
+    </div>
+
+    <fieldset class="controls">
+      <legend>Layers</legend>
+      <label><input type="checkbox" id="optTerrain" checked /> Lidar terrain shading</label>
+      <label><input type="checkbox" id="optPlaces" checked /> Place notes</label>
+      <label class="select-row" id="sourceRow">Infrared source
+        <select id="optSource">
+          <option value="sentinel">Sentinel-2 (10 m)</option>
+          <option value="landsat">Landsat (30 m)</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <p class="credits">
+      Imagery: ESA Copernicus Sentinel-2 and USGS/NASA Landsat via Esri; Esri World Imagery.
+      Terrain: Esri World Hillshade (USGS 3DEP lidar). Map by
+      <a href="./">Zander Hirman</a>.
+    </p>
+  </div>
+</aside>
+
+<a class="back-link" href="./">&larr; CRC Projects</a>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/altamaha.js"></script>
+</body>
+</html>
