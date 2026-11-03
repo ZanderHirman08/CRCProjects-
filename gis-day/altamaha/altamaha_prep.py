@@ -39,10 +39,17 @@ BBOX_WGS84 = (-81.62, 31.25, -81.24, 31.47)
 # For NAIP (one 4-band file), point all three at the same file with \Band_4, \Band_1, \Band_2.
 # If you exported a ready-made CIR raster from Living Atlas, set CIR_READY to that path
 # and the three band paths are ignored.
+# For Landsat 8/9 Collection 2 Level-2 use the surface reflectance bands:
+#   NIR = *_SR_B5.TIF, RED = *_SR_B4.TIF, GREEN = *_SR_B3.TIF
 NIR_BAND = r"C:\GIS\GISDay2026\raw\sentinel\T17Rxx_YYYYMMDD_B08_10m.jp2"
 RED_BAND = r"C:\GIS\GISDay2026\raw\sentinel\T17Rxx_YYYYMMDD_B04_10m.jp2"
 GREEN_BAND = r"C:\GIS\GISDay2026\raw\sentinel\T17Rxx_YYYYMMDD_B03_10m.jp2"
 CIR_READY = None
+
+# Set True for Landsat Collection 2 Level-2. It treats 0 as NoData, applies the
+# USGS reflectance scale factor for NDVI, and resamples the 30 m pixels to a
+# smooth 10 m grid (cubic) so they don't look blocky in print.
+LANDSAT_L2 = False
 
 # Lidar DEM: a single raster, or a folder of DEM tiles to mosaic.
 DEM_INPUT = r"C:\GIS\GISDay2026\raw\lidar"
@@ -114,8 +121,13 @@ def build_cir(gdb, aoi):
 
     projected = os.path.join(gdb, "tmp_cir_proj")
     log("Projecting imagery ...")
-    arcpy.management.ProjectRaster(src, projected, OUT_SR, "BILINEAR")
-    clip_to(projected, aoi, out)
+    if LANDSAT_L2:
+        arcpy.management.ProjectRaster(src, projected, OUT_SR, "CUBIC", "10")
+        arcpy.management.Clip(projected, "#", out, aoi, "0",
+                              "ClippingGeometry", "NO_MAINTAIN_EXTENT")
+    else:
+        arcpy.management.ProjectRaster(src, projected, OUT_SR, "BILINEAR")
+        clip_to(projected, aoi, out)
     arcpy.management.CalculateStatistics(out)
     log(f"CIR composite: {out}")
     return out
@@ -124,6 +136,10 @@ def build_cir(gdb, aoi):
 def build_ndvi(gdb, cir):
     nir = Float(Raster(os.path.join(cir, "Band_1")))
     red = Float(Raster(os.path.join(cir, "Band_2")))
+    if LANDSAT_L2:
+        # Collection 2 Level-2 surface reflectance = DN * 0.0000275 - 0.2
+        nir = SetNull(nir == 0, nir * 0.0000275 - 0.2)
+        red = SetNull(red == 0, red * 0.0000275 - 0.2)
     ndvi = (nir - red) / (nir + red)
     out = os.path.join(gdb, "NDVI")
     ndvi.save(out)
