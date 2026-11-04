@@ -65,7 +65,7 @@ window.SITE = {
 window.PROJECTS = [
   {
     id: "gis-day-2026-buildings",
-    url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026",
+    url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026/",
     title: "[title]",
     date: "[date]",
     badge: "",
@@ -82,7 +82,7 @@ window.PROJECTS = [
   },
   {
     id: "gis-day-2026-altamaha",
-    url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026_Atlamaha",
+    url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Atlamaha/",
     title: "[title]",
     date: "[date]",
     badge: "",
