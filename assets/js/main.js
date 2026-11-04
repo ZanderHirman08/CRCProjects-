@@ -9,8 +9,14 @@ function esc(value) {
   })[c]);
 }
 
+// A project with `url` links straight there (e.g. its own repo or site);
+// otherwise to its detail page.
 function projectHref(p) {
-  return `project.html?id=${encodeURIComponent(p.id)}`;
+  return p.url || `project.html?id=${encodeURIComponent(p.id)}`;
+}
+
+function externalAttrs(p) {
+  return p.url ? ' target="_blank" rel="noopener"' : "";
 }
 
 function tagList(tags) {
@@ -43,7 +49,7 @@ function makeMap(el, view) {
 function addMarker(map, p, withLink) {
   const loc = p.location;
   const popup = `<strong>${esc(loc.name || p.title)}</strong><br>${esc(p.title)}` +
-    (withLink ? `<br><a href="${projectHref(p)}">View project</a>` : "");
+    (withLink ? `<br><a href="${esc(projectHref(p))}"${externalAttrs(p)}>View project</a>` : "");
   return L.circleMarker([loc.lat, loc.lng], {
     radius: 7, color: "#2f5d6b", weight: 2, fillColor: "#2f5d6b", fillOpacity: 0.6
   }).addTo(map).bindPopup(popup);
@@ -81,7 +87,7 @@ function card(p) {
     ? `<div class="thumb"><img src="${esc(p.image)}" alt="" loading="lazy" /></div>`
     : `<div class="thumb no-image">${esc((p.tags || [])[0] || p.title)}</div>`;
   return `
-    <a class="project-card" href="${projectHref(p)}">
+    <a class="project-card" href="${esc(projectHref(p))}"${externalAttrs(p)}>
       ${thumb}
       <div class="body">
         ${p.badge ? `<span class="featured-badge">${esc(p.badge)}</span>` : ""}

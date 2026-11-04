@@ -54,6 +54,8 @@ window.SITE = {
  *   summary   2–3 sentences shown on the card
  *   image     thumbnail, e.g. "assets/images/projects/my-map.png" (optional)
  *   location  { name, lat, lng } puts a point on the map (optional)
+ *   url       if set, clicking the card opens this link (e.g. the project's repo or
+ *             live site) instead of the project page (optional)
  *   links     buttons, e.g. live map, StoryMap, write-up PDF (optional)
  *   figures   [{ src, caption }] images shown in a strip on the project page (optional)
  *   details   longer write-up on the project page. Each string is a paragraph;
@@ -63,6 +65,7 @@ window.SITE = {
 window.PROJECTS = [
   {
     id: "gis-day-2026-buildings",
+    url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026",
     title: "[title]",
     date: "[date]",
     badge: "",
@@ -79,6 +82,7 @@ window.PROJECTS = [
   },
   {
     id: "gis-day-2026-altamaha",
+    url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026_Atlamaha",
     title: "[title]",
     date: "[date]",
     badge: "",
