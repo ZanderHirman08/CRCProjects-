@@ -2,6 +2,8 @@
  * ─────────────────────────────────────────────────────────────
  *  SITE SETTINGS + PROJECT LIST
  *  This is the only file you need to edit to update the site.
+ *  After editing, bump the ?v=... number on data/projects.js in index.html and
+ *  project.html so browsers load the new version instead of a cached copy.
  * ─────────────────────────────────────────────────────────────
  */
 
