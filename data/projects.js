@@ -82,7 +82,7 @@ window.PROJECTS = [
   },
   {
     id: "gis-day-2026-altamaha",
-    url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Atlamaha/",
+    url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Altamaha/",
     title: "[title]",
     date: "[date]",
     badge: "",
@@ -91,8 +91,8 @@ window.PROJECTS = [
     summary: "[summary]",
     image: "",
     links: [
-      { label: "[link label]", url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Atlamaha/" },
-      { label: "[link label]", url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026_Atlamaha" }
+      { label: "[link label]", url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Altamaha/" },
+      { label: "[link label]", url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026_Altamaha" }
     ],
     figures: [],
     details: []
