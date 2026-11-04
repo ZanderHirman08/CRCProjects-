@@ -98,27 +98,5 @@ window.PROJECTS = [
     ],
     figures: [],
     details: []
-  },
-  {
-    id: "example-project",
-    title: "Example Project (replace me)",
-    date: "Fall 2026",
-    badge: "Example",
-    role: "GIS Intern",
-    tags: ["ArcGIS Pro", "Example"],
-    summary:
-      "This is a placeholder showing how a project entry looks. Edit or delete it in data/projects.js.",
-    image: "",
-    location: { name: "Brunswick, GA", lat: 31.15, lng: -81.49 },
-    links: [
-      { label: "Source", url: "https://github.com/ZanderHirman08/CRCProjects-" }
-    ],
-    figures: [],
-    details: [
-      "Use this section to describe the problem the project solved and who it was for.",
-      "What I did:",
-      "- Collected or compiled the data\n- Built the analysis or map\n- Delivered it to staff, partners, or the public",
-      "Close with the outcome: how it was used, results, or what you'd do differently."
-    ]
   }
 ];
