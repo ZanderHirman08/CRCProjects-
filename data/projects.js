@@ -78,6 +78,22 @@ window.PROJECTS = [
     details: []
   },
   {
+    id: "gis-day-2026-altamaha",
+    title: "[title]",
+    date: "[date]",
+    badge: "",
+    role: "",
+    tags: [],
+    summary: "[summary]",
+    image: "",
+    links: [
+      { label: "[link label]", url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026_Atlamaha/" },
+      { label: "[link label]", url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026_Atlamaha" }
+    ],
+    figures: [],
+    details: []
+  },
+  {
     id: "example-project",
     title: "Example Project (replace me)",
     date: "Fall 2026",
