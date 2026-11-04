@@ -62,6 +62,22 @@ window.SITE = {
 
 window.PROJECTS = [
   {
+    id: "gis-day-2026-buildings",
+    title: "[title]",
+    date: "[date]",
+    badge: "",
+    role: "",
+    tags: [],
+    summary: "[summary]",
+    image: "",
+    links: [
+      { label: "[link label]", url: "https://zanderhirman08.github.io/CRC_GIS_Day_2026/" },
+      { label: "[link label]", url: "https://github.com/ZanderHirman08/CRC_GIS_Day_2026" }
+    ],
+    figures: [],
+    details: []
+  },
+  {
     id: "altamaha-little-amazon",
     title: "The Little Amazon: Altamaha River Delta in Near-Infrared",
     date: "Fall 2026",
